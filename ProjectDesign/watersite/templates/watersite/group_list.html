@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>This is the main overview of your watering groups</h1>
+<div class='groups'>
+    {% for group in groups %}
+    <div class='group'>
+        <h2>{{group.location}}. {{group.plant}}</h2>
+        Area: {{group.area}} square meters <br>
+        last irrigation: {{group.last_irrigation}}<br>
+        Irrigation time: {{group.water_t1}} 
+        </p>
+
+
+    </div>
+    {% endfor %}
+    {% endblock %}

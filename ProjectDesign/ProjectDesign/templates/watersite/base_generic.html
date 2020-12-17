@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block title %}<title>H2OS</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <style>
+    div.groups {
+      --page-title-display: block;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #333;
+      hyphens: manual;
+      text-align: left;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      -webkit-box-align: stretch;
+      align-items: stretch;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      margin-left: 5%;
+      margin-right: 5%;
+      padding-bottom: 10%;
+    }
+
+    .groups div.group {
+      --page-title-display: block;
+      color: #333;
+      min-width: 0;
+      padding: 0;
+      margin: 0;
+      transition-property: background, border, box-shadow, -webkit-box-shadow;
+      transition-duration: .25s;
+      overflow: hidden;
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <a href="/admin/">Change groups</a>
+  </header>
+  <p>TIME (debug purpose): {% now "jS F Y H:i" %} </p>
+  {% block content %}{% endblock %}
+</body>
+
+</html>
