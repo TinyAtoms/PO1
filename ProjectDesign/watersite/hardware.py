@@ -1,5 +1,5 @@
 import random
-
+from RPi import GPIO
 
 def sense_distance():
     ms = timedelta(microseconds=1)
@@ -36,7 +36,7 @@ def sense_distance():
 
 
 def getwaterlevel():
-    return 220 - random.randint(150, 157)
+    return 220 - random.randint(150, 157) # TODO: REMOVE
     distance = sense_distance()
     # bottom of bucket - distance to waterlevel = distance waterbucket bottom
     return 220 - distance
@@ -44,6 +44,7 @@ def getwaterlevel():
 
 
 def activate_relay(group, t):
+    return True # TODO: REMOVE
     GPIO.setmode(GPIO.BCM)
     trigger = 18
     if group in [0, 1, 2, 3, 4]:  # we'd need to specify which triggers to use
