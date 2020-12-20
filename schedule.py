@@ -55,6 +55,6 @@ if now > newlevel_min and now < newlevel_max:
 # watering
 print("checking if we need to water anything")
 for i in irrigation_times:
-    if i[0] - now <= 5:
+    if i[0] - now <= 5 and i[0] - now >= 0:
         print(f"watering group {i[1]}")
         requests.get(baseurl + "/water_plantgroup/" + str(i[1]))
