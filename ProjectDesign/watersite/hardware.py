@@ -36,6 +36,7 @@ def sense_distance():
 
 
 def getwaterlevel():
+    return 220 - random.randint(150, 157)
     distance = sense_distance()
     # bottom of bucket - distance to waterlevel = distance waterbucket bottom
     return 220 - distance

@@ -46,7 +46,8 @@ class Plantgroup(models.Model):
         volume = et0 * self.area  # mm * m^2 = dm^3
         volume -= self.last_irrigation
         activation_time = volume / (self.water_flowrate / 60)
-
+        if activation_time < 0:
+            return volume
         activate_relay(self.location, activation_time)
         self.last_irrigation = volume
         self.save()
