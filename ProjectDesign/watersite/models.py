@@ -44,7 +44,10 @@ class Plantgroup(models.Model):
         pk = get_pan_coeff()  # pan coeff, dimmensionless
         et0 = evap * pk * self.kc
         volume = et0 * self.area  # mm * m^2 = dm^3
-        volume -= self.last_irrigation
+        try:
+            volume -= self.last_irrigation
+        except TypeError:
+            pass
         activation_time = volume / (self.water_flowrate / 60)
         if activation_time < 0:
             return volume
