@@ -25,7 +25,7 @@ SECRET_KEY = '=i5)w^bjg$t-&84s!m)xq*q)_tgqqjm%t(6&*_a6c@4jy2za#1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dietpi", "dietpi.local", "dietpi.localhost.localdomain", "10.42.0.172", "localhost", "127.0.0.1"]
 
 
 # Application definition

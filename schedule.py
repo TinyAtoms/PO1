@@ -1,10 +1,11 @@
+#!/usr/bin/python3
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import time, datetime, timedelta
 import requests
 
-db_path = "./ProjectDesign/db.sqlite3"  # this will need to be changed
+db_path = "/root/PO1/ProjectDesign/db.sqlite3"  # this will need to be changed
 engine = create_engine(f'sqlite:///{db_path}')
 Base = declarative_base(engine)
 
