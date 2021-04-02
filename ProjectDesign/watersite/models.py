@@ -78,8 +78,7 @@ class Transipration(models.Model):
     def create(cls):
         '''This sets the startlevel on creation'''
         start = getwaterlevel()
-        data = cls(start_level=start, last_level=start)
-        return data
+        return cls(start_level=start, last_level=start)
 
     def measure(self):
         '''
@@ -116,8 +115,7 @@ def get_pan_coeff():
         return 1
     if len(pan_data) < 10:
         return 1
-    
+
     FAO_data = array([FAO_data[i[0]] for i in pan_data])
     pan_data = array([i[1] for i in pan_data])
-    Kp = average(pan_data/FAO_data)
-    return Kp
+    return average(pan_data/FAO_data)

@@ -26,8 +26,7 @@ def loadSession():
     """"""
     metadata = Base.metadata
     Session = sessionmaker(bind=engine)
-    session = Session()
-    return session
+    return Session()
 
 
 session = loadSession()
